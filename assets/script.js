@@ -90,6 +90,7 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
+  input("How many character of password do you want to generate?")
 
 }
 
@@ -100,6 +101,7 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
+  getPasswordOptions();
 
 }
 

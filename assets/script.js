@@ -94,38 +94,38 @@ function getPasswordOptions() {
   let length = parseInt(
     prompt("How many characters do you want your password to be?")
   )
-
+// program will be ended if user input non numeric characters
   if(isNaN(length) === true){
-    alert("Please input a number between 8-128");
+    alert("Please input a number between 10-64");
     return;
   }
-
-  if(length < 8) {
-    alert("Password length must be at least 8 characters");
+// program will ended if user choose the number less than 8 characters
+  if(length < 10) {
+    alert("Password length must be at least 10 characters");
     return;
   }
-
-  if(length > 128) {
-    alert("Password length must be less than 128 characters");
+// program will ended if user choose the number greater than 64 characters
+  if(length > 64) {
+    alert("Password length must be less than 64 characters");
     return;
   }
-
+// ask user to choose the option that include the numeric characters
   let incNumericCharacters = confirm (
     "Click 'OK' to include numeric characters"
   )
-
+// ask user to choose the option that include the special characters
   let incSpecialCharacters = confirm (
     "Click 'OK' to include special characters"
   )
-
+// ask user to choose the option that include the lower case characters
   let incLowerCaseCharacters = confirm (
     "Click 'OK' to include lower case characters"
   )
-
+// ask user to choose the option that include the upper case characters
   let incUpperCaseCharacters = confirm (
     "Click 'OK' to include upper case characters"
   )
-
+// program will be ended if non of the option selected
   if(incNumericCharacters === false &&
     incSpecialCharacters === false &&
     incLowerCaseCharacters === false &&
@@ -162,9 +162,7 @@ function generatePassword() {
   let options = getPasswordOptions();
   console.log(options);
   let result = []
-
   let possibleCharacters = []
-
   let guaranteeCharacters = []
 
   if(options.incNumericCharacters) {

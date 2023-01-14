@@ -91,21 +91,23 @@ var upperCasedCharacters = [
 // Function to prompt user for password options
 function getPasswordOptions() {
   // variable to store the length of the password that user choose
-  let lenght = parseInt(
+  let length = parseInt(
     prompt("How many characters do you want your password to be?")
   )
 
   if(isNaN(length) === true){
-    alert("Please input a number between 10-128");
+    alert("Please input a number between 8-128");
     return;
   }
 
-  if(length < 10) {
-    alert("Password length must be at least 10 characters")
+  if(length < 8) {
+    alert("Password length must be at least 8 characters");
+    return;
   }
 
-  if(length > 65) {
-    alert("Password length must be less than 65 characters")
+  if(length > 128) {
+    alert("Password length must be less than 128 characters");
+    return;
   }
 
   let incNumericCharacters = confirm (
